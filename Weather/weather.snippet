@@ -1,0 +1,9 @@
+[rewrite_local]
+
+^https?:\/\/weatherkit\.apple\.com\/api\/v1\/availability\/ url script-response-body https://cdn.jsdelivr.net/gh/Chordix/Scripts@main/Weather/response.bundle.js
+^https?:\/\/weatherkit\.apple\.com\/api\/v2\/weather\/ url script-request-header https://cdn.jsdelivr.net/gh/Chordix/Scripts@main/Weather/request.bundle.js
+^https?:\/\/weatherkit\.apple\.com\/api\/v2\/weather\/ url script-response-body https://cdn.jsdelivr.net/gh/Chordix/Scripts@main/Weather/response.bundle.js
+^https?:\/\/weather-analytics-events\.apple\.com\/ url reject
+
+[mitm]
+hostname = weatherkit.apple.com, weather-analytics-events.apple.com, *.tthr.apple.com, tether.edge.apple
